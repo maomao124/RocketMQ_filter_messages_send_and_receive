@@ -46,7 +46,7 @@ public class FilterProducer1
             //消息体字符串
             String msg = "消息" + i + "     消息标签：" + tag;
             //消息对象
-            Message message = new Message("test_group", tag, msg.getBytes(StandardCharsets.UTF_8));
+            Message message = new Message("test_topic", tag, msg.getBytes(StandardCharsets.UTF_8));
             //打印
             System.out.println(msg);
             //发送消息
