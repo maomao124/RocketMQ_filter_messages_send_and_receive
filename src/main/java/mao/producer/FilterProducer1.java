@@ -39,7 +39,7 @@ public class FilterProducer1
         //启动
         defaultMQProducer.start();
         //发送消息
-        for (int i = 0; i < 200; i++)
+        for (int i = 0; i < 100; i++)
         {
             //标签
             String tag = TAGS[i % (TAGS.length)];
