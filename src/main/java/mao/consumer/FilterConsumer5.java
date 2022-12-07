@@ -15,17 +15,17 @@ import java.util.List;
 /**
  * Project name(项目名称)：RocketMQ_过滤消息的发送与接收
  * Package(包名): mao.consumer
- * Class(类名): FilterConsumer4
+ * Class(类名): FilterConsumer5
  * Author(作者）: mao
  * Author QQ：1296193245
  * GitHub：https://github.com/maomao124/
  * Date(创建日期)： 2022/12/7
- * Time(创建时间)： 14:54
+ * Time(创建时间)： 14:57
  * Version(版本): 1.0
- * Description(描述)： 消费者，条件：a>=7 or b<6
+ * Description(描述)： 消费者，条件：a<=6 and b>11
  */
 
-public class FilterConsumer4
+public class FilterConsumer5
 {
     public static void main(String[] args) throws MQClientException
     {
@@ -36,7 +36,7 @@ public class FilterConsumer4
         //设置消费模式-广播模式
         defaultMQPushConsumer.setMessageModel(MessageModel.BROADCASTING);
         //订阅
-        defaultMQPushConsumer.subscribe("test_topic", MessageSelector.bySql("a>=7 or b<6"));
+        defaultMQPushConsumer.subscribe("test_topic", MessageSelector.bySql("a<=6 and b>11"));
         //注册监听器
         defaultMQPushConsumer.registerMessageListener(new MessageListenerConcurrently()
         {
