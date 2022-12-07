@@ -14,17 +14,17 @@ import java.util.List;
 /**
  * Project name(项目名称)：RocketMQ_过滤消息的发送与接收
  * Package(包名): mao.consumer
- * Class(类名): FilterConsumer1
+ * Class(类名): FilterConsumer2
  * Author(作者）: mao
  * Author QQ：1296193245
  * GitHub：https://github.com/maomao124/
  * Date(创建日期)： 2022/12/7
- * Time(创建时间)： 14:24
+ * Time(创建时间)： 14:32
  * Version(版本): 1.0
- * Description(描述)： 消费者，消费标签为1和3的消息
+ * Description(描述)： 消费者2，只消费标签为5的消息
  */
 
-public class FilterConsumer1
+public class FilterConsumer2
 {
     public static void main(String[] args) throws MQClientException
     {
@@ -35,7 +35,7 @@ public class FilterConsumer1
         //设置消费模式-广播模式
         defaultMQPushConsumer.setMessageModel(MessageModel.BROADCASTING);
         //订阅
-        defaultMQPushConsumer.subscribe("test_topic", "tag1 || tag3");
+        defaultMQPushConsumer.subscribe("test_topic", "tag5");
         //注册监听器
         defaultMQPushConsumer.registerMessageListener(new MessageListenerConcurrently()
         {
